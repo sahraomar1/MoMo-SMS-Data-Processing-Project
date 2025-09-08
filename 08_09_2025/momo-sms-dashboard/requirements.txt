@@ -1,0 +1,18 @@
+# XML Parsing
+lxml
+
+# Date parsing
+python-dateutil
+
+# SQLite DB interaction (optional)
+sqlalchemy
+
+# API (optional)
+fastapi
+uvicorn
+
+# Data validation
+pydantic
+
+# Testing
+pytest
