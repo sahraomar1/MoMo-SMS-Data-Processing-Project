@@ -1,0 +1,6 @@
+{
+  "log_id": 1,
+  "transaction_id": 1,
+  "log_message": "Parsed SMS: TXN 1 processed successfully",
+  "log_timestamp": "2025-09-01T08:12:05"
+}

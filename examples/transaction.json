@@ -1,0 +1,10 @@
+{
+  "transaction_id": 1,
+  "amount": 200.00,
+  "transaction_date": "2025-09-01T08:12:00",
+  "sender_id": 1,
+  "receiver_id": 2,
+  "balance": 1200.00,
+  "fee": 2.00,
+  "status": "COMPLETED"
+}
