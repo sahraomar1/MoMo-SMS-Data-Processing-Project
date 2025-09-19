@@ -16,5 +16,5 @@ https://app.diagrams.net/#G1GRbP-ABcnm2IMREPV_XwySqk0tVJ4Avq#%7B%22pageId%22%3A%
 # Scrum Board
 Track our progress here (https://github.com/users/sahraomar1/projects/1)
 
-#ERD
+# Link to ERD
 https://drive.google.com/file/d/1G4BocWpC4Kkvpxg63K3AAmhGwiJpuWyS/view
