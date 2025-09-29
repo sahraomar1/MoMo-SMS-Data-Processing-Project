@@ -1,9 +1,40 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 import json
 import os
 import uuid
+from functools import wraps
+import base64
 
 app = Flask(__name__)
+
+
+#Credentials for logging in
+
+# Hardcoded credentials (demo only)
+USERNAME = "admin"
+PASSWORD = "password123"
+
+def check_auth(username, password):
+    """Check if a username/password combo is valid."""
+    return username == USERNAME and password == PASSWORD
+
+def authenticate():
+    """Send 401 response prompting for login."""
+    return Response(
+        'Could not verify your access level.\n'
+        'You must provide valid credentials.', 
+        401,
+        {'WWW-Authenticate': 'Basic realm="Login Required"'}
+    )
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if not auth or not check_auth(auth.username, auth.password):
+            return authenticate()
+        return f(*args, **kwargs)
+    return decorated
 
 # Path to the transactions_dict.json file
 DATA_FILE = "08_09_2025/momo-sms-dashboard/data/processed/transactions_dict.json"
@@ -37,11 +68,13 @@ def generate_id():
 # -------------------------
 
 @app.route("/transactions", methods=["GET"])
+@requires_auth
 def get_all():
     """Return all transactions as a JSON dictionary."""
     return jsonify(transactions)
 
 @app.route("/transactions/<tx_id>", methods=["GET"])
+@requires_auth
 def get_one(tx_id):
     """Return a single transaction by its transaction_id."""
     tx = transactions.get(tx_id)
