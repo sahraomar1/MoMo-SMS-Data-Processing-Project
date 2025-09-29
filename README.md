@@ -9,6 +9,7 @@ This project builds an application to process and categorize MoMo SMS data from 
 - Sahra Omar- Sahraomar1
 - Kyle Konan- Kylealu
 - Garang Buke- garangbse
+- Rajveer Singh Jolly - SpaceMan619
 
 # Link to System Architecture
 https://app.diagrams.net/#G1GRbP-ABcnm2IMREPV_XwySqk0tVJ4Avq#%7B%22pageId%22%3A%22Dxe8UFwux_gS2KKT1KYU%22%7D
