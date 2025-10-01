@@ -6442,23 +6442,6 @@
         "fee": "0",
         "message": null
     },
-    "10083689781": {
-        "date": "1725756012605",
-        "type": "1",
-        "readable_date": "8 Sep 2024 2:40:12 AM",
-        "address": "M-Money",
-        "contact_name": "(Unknown)",
-        "transaction_id": "10083689781",
-        "amount": null,
-        "sender_name": null,
-        "sender_phone": null,
-        "receiver_name": "Jane Smith ",
-        "receiver_phone": "85339",
-        "transaction_date": "2024-09-08 02:40:02",
-        "balance": null,
-        "fee": "0",
-        "message": null
-    },
     "68925556497": {
         "date": "1725795298217",
         "type": "1",
@@ -14006,5 +13989,11 @@
         "balance": null,
         "fee": "0",
         "message": null
+    },
+    "259112753361": {
+        "sender": "Alice",
+        "receiver": "Bob",
+        "amount": 1000,
+        "transaction_id": "259112753361"
     }
 }
