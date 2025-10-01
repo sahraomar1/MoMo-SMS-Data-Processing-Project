@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, Response
+import Flask
+from Flask import Flask, request, jsonify, Response
 import json
 import os
 import uuid
@@ -10,8 +11,8 @@ app = Flask(__name__)
 
 #Credentials for logging in
 
-# Hardcoded credentials (demo only)
-USERNAME = "admin"
+# Hardcoded credentials
+USERNAME = "MotoMan"
 PASSWORD = "password123"
 
 def check_auth(username, password):
@@ -83,6 +84,7 @@ def get_one(tx_id):
     return jsonify(tx)
 
 @app.route("/transactions", methods=["POST"])
+@requires_auth
 def create():
     """Create a new transaction. If no ID is provided, auto-generate one."""
     data = request.json
@@ -99,6 +101,7 @@ def create():
     return jsonify(data), 201
 
 @app.route("/transactions/<tx_id>", methods=["PUT"])
+@requires_auth
 def update(tx_id):
     """Update an existing transaction (except transaction_id)."""
     tx = transactions.get(tx_id)
@@ -115,6 +118,7 @@ def update(tx_id):
     return jsonify(tx)
 
 @app.route("/transactions/<tx_id>", methods=["DELETE"])
+@requires_auth
 def delete(tx_id):
     """Delete a transaction by its transaction_id."""
     if tx_id not in transactions:
