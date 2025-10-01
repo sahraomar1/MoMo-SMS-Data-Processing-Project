@@ -1,5 +1,5 @@
-import Flask
-from Flask import Flask, request, jsonify, Response
+
+from flask import Flask, request, jsonify, Response
 import json
 import os
 import uuid
@@ -38,7 +38,7 @@ def requires_auth(f):
     return decorated
 
 # Path to the transactions_dict.json file
-DATA_FILE = "08_09_2025/momo-sms-dashboard/data/processed/transactions_dict.json"
+DATA_FILE = "Team-Setup/08_09_2025/momo-sms-dashboard/data/processed/transactions_dict.json"
 
 # -------------------------
 # Load data at startup
